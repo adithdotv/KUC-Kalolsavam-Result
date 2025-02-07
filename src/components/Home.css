@@ -1,27 +1,57 @@
 /* General styles for home container */
 .home-container {
-    position: relative;
-    min-height: 100vh; /* Full height of the viewport */
-  }
-  
-  /* Adjustments for the content-container */
-  .content-container {
-    position: absolute;
-    top: 25%; /* Starts at 25% from the top of the screen */
-    bottom: 25%; /* Ends at 25% from the bottom of the screen */
-    left: 0;
-    right: 0;
-    overflow: hidden; /* Hide any content that exceeds the boundaries */
-  }
-  
-  /* Content scrollable area */
-  .content-scrollable {
-    height: 100%;
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 20px;
-    box-sizing: border-box; /* Prevent padding from affecting size */
-  }
-  
+  position: relative;
+  min-height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  padding-top: 80px; /* Adjust if NavBar is causing issues */
+}
+
+/* Adjustments for the content-container */
+.content-container {
+  width: 100%;
+  flex: 1; /* Allow it to take available space */
+  overflow: hidden; /* Prevent overflow */
+  display: flex;
+  justify-content: center;
+}
+
+/* Content scrollable area */
+.content-scrollable {
+  width: 90%; /* Adjust width for better layout */
+  max-width: 1200px; /* Prevent extra-wide layouts */
+  height: calc(100vh - 100px); /* Adjust to prevent excessive scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px;
+  box-sizing: border-box; /* Prevent padding from affecting size */
+}
+
+/* Grid for cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Card styling */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
 
-  
+/* Hide scrollbar for all elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+*::-webkit-scrollbar {
+  display: none;
+}

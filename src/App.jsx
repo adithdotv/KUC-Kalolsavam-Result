@@ -3,9 +3,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 
 import Search from './components/Search';
+
 import Schedule from './components/Schedule';
 import Logobar from './components/Logobar';
+import Admin from './components/Admin/Admin';
 import NavBar from './components/NavBar';
+
+
+
+
+
+
 
 
 // Import background image
@@ -41,3 +49,33 @@ function App() {
 }
 
 export default App;
+
+
+
+// import './App.css';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import Home from './components/Home';
+
+// import Search from './components/Search';
+// import Schedule from './components/Schedule';
+// import Logobar from './components/Logobar';
+
+// import NavBar from './components/NavBar';
+// import Admin from './components/Admin/Admin';
+
+
+
+// // Import background image
+// import bgImage from './assets/bg.png';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       {/* Apply background image with fixed attachment */}
+      
+//       <Admin/>
+//     </div>
+//   );
+// }
+
+// export default App;
