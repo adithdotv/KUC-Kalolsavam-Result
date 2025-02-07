@@ -18,35 +18,35 @@ function Home() {
 
               
               <div className="card">
-                <h2>Team A</h2>
+                <h2>SOCIALISM</h2>
                 <p>Grade: A</p>
                 <p>Score: 100</p>
               </div>
 
               {/* Additional cards */}
               <div className="card">
-                <h2>Team B</h2>
-                <p>Grade: B</p>
+                <h2>SECULARISM</h2>
+                <p>Position : First</p>
                 <p>Score: 90</p>
               </div>
               <div className="card">
                 <h2>Team C</h2>
-                <p>Grade: C</p>
+                <p>Position : Second</p>
                 <p>Score: 80</p>
               </div>
               <div className="card">
-                <h2>Team D</h2>
-                <p>Grade: D</p>
+                <h2>DEMOCRACY</h2>
+                <p>Position : Third</p>
                 <p>Score: 70</p>
               </div>
               <div className="card">
-                <h2>Team E</h2>
-                <p>Grade: E</p>
+                <h2>JUSTICE</h2>
+                <p>Position : Fourth</p>
                 <p>Score: 60</p>
               </div>
               <div className="card">
-                <h2>Team F</h2>
-                <p>Grade: F</p>
+                <h2>LIBERTY</h2>
+                <p>Position : Fifth</p>
                 <p>Score: 50</p>
               </div>
 
