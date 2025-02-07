@@ -14,9 +14,13 @@ function Schedule() {
             <h3 className="text-3xl font-bold text-[#C3A17A]">Schedule</h3>
           </div>
         </div>
+        <p className="font-bold text-[#C3A17A]">
+                  Feb 11 to Feb 14 - 2025
+                </p>
+
 
         {/* Fixed section for scrollable content */}
-        <div className="content-container mt-5">
+        <div className="content-container mt-0">
           <div className="content-scrollable">
             <div className="container px-4">
               {/* Cards Section */}
@@ -27,10 +31,7 @@ function Schedule() {
 
 
                 {/* Card 1 */}
-                <p className="font-bold text-[#C3A17A]">
-                  Feb 11 to Feb 14 - 2025
-                </p>
-
+                
                 <div className="card">
                   <h2>Team A</h2>
                   <p>Grade: A</p>

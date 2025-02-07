@@ -1,54 +1,5 @@
 
 
-
-
-
-  /* Styling for individual cards */
-  .card {
-    background: linear-gradient(to bottom, rgba(244, 225, 178, 0.51), #874356b8); /* Sandal yellowish gradient */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 10px; /* Add space between cards */
-  }
-  
-  .card h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .card p {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-  }
-  
-  /* Mobile Optimizations */
-  @media (max-width: 640px) {
-    .home-container {
-      padding-top: 10%; /* Reduce top padding */
-      padding-bottom: 10%; /* Reduce bottom padding */
-    }
-  
-    .content-container {
-      top: 20%; /* Adjust top for mobile */
-      bottom: 20%; /* Adjust bottom for mobile */
-    }
-  
-    .card {
-      padding: 15px; /* Reduce padding in mobile */
-    }
-  
-    .card h2 {
-      font-size: 1.2rem; /* Adjust font size for mobile */
-    }
-  
-    .card p {
-      font-size: 0.9rem; /* Adjust font size for mobile */
-    }
-  }
-  
-
   /* Search input and button styling */
 .search-input {
     width: 80%;
@@ -65,7 +16,76 @@
   }
   
   .search-button:hover {
-    background-color: #5e2a47b8; /* Darker shade on hover */
+    background-color: #5e2a47b8; 
+    /* Darker shade on hover */
   }
   
   
+
+
+  .card {
+    background: linear-gradient(135deg, #874356b8, #ff758c); /* Vibrant gradient */
+    padding: 24px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(30deg);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 117, 140, 0.4);
+}
+
+
+.card:hover::before {
+    opacity: 1;
+}
+
+
+.card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+.card p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+@media (max-width: 640px) {
+    .card {
+        padding: 18px;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+}

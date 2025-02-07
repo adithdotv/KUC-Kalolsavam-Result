@@ -13,7 +13,7 @@ export default function NavBar() {
   const location = useLocation();
 
   return (
-    <nav className="bg-[#874356b8] bg-opacity-70 p-4 shadow-2xl fixed bottom-4 left-4 right-4 z-50 rounded-full">
+    <nav className="bg-[#874356f5] bg-opacity-70 p-4 shadow-2xl fixed bottom-4 left-4 right-4 z-50 rounded-full">
       <div className="max-w-6xl mx-auto flex justify-center items-center">
         <ul className="flex space-x-8">
           {navItems.map((item) => (
