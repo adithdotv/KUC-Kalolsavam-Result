@@ -1,0 +1,97 @@
+/* Full Page Centered Container */
+.admin-container {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2; /* Soft background color */
+}
+
+.form-container {
+    background-color: #ffffff; /* White background for the form */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Smooth shadow */
+    width: 80%; /* Responsive width */
+    max-width: 900px; /* Maximum width for larger screens */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Input Containers */
+.input-container {
+    margin-bottom: 20px; /* Spacing between inputs */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Style */
+.input-container label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Style for Inputs and Select */
+.input-container input,
+.input-container select {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd; /* Light border */
+    border-radius: 6px;
+    background-color: #ffffff; /* White background for inputs */
+    outline: none;
+    width: 100%; /* Make inputs and selects take full width */
+    transition: border-color 0.3s;
+}
+
+/* Focus effect */
+.input-container input:focus,
+.input-container select:focus {
+    border-color: #007bff; /* Blue border when focused */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Display itemName and teamName in a row */
+.row-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.row-inputs .input-container {
+    flex: 1;
+}
+
+/* Submit Button */
+.submit-container {
+    margin-top: 20px;
+}
+
+.submit-container button {
+    width: 100%;
+    padding: 14px;
+    background-color: #6c0f0f; /* Green background */
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-container button:hover {
+    background-color: #218838; /* Darker green on hover */
+}

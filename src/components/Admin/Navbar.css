@@ -1,0 +1,29 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff; /* Dark background */
+    color: white;
+    
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .logo-image {
+    height: 50px; /* Adjust logo size */
+    width: auto;
+  }
+  
+  .navbar-text {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  

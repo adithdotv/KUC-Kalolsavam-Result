@@ -1,0 +1,27 @@
+/* General styles for home container */
+.home-container {
+    position: relative;
+    min-height: 100vh; /* Full height of the viewport */
+  }
+  
+  /* Adjustments for the content-container */
+  .content-container {
+    position: absolute;
+    top: 25%; /* Starts at 25% from the top of the screen */
+    bottom: 25%; /* Ends at 25% from the bottom of the screen */
+    left: 0;
+    right: 0;
+    overflow: hidden; /* Hide any content that exceeds the boundaries */
+  }
+  
+  /* Content scrollable area */
+  .content-scrollable {
+    height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px;
+    box-sizing: border-box; /* Prevent padding from affecting size */
+  }
+  
+
+
+  
