@@ -10,12 +10,6 @@ import Admin from './components/Admin/Admin';
 import NavBar from './components/NavBar';
 
 
-
-
-
-
-
-
 // Import background image
 import bgImage from './assets/bg.png';
 
@@ -42,6 +36,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/Search' element={<Search />} />
           <Route path='/Schedule' element={<Schedule />} />
+          <Route path='/Admin' element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </div>

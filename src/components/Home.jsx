@@ -1,71 +1,72 @@
+import React, { useState, useEffect } from "react";
+import { get, ref } from "firebase/database";
+import { db } from "../firebaseConfig";
+import "./Home.css";
+import "./Card.css";
 
-import React from 'react';
-import './Home.css'; // Import the CSS file
-import './Card.css'
+const TEAMS = ["SOCIALISM", "SECULARISM", "DEMOCRACY", "JUSTICE", "LIBERTY", "EQUALITY"];
+
 function Home() {
+  const [rankings, setRankings] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchResults = async () => {
+      try {
+        const dbRef = ref(db, "results/");
+        const snapshot = await get(dbRef);
+        const results = snapshot.val() || {};
+
+        // Aggregate points by team
+        const teamScores = TEAMS.reduce((acc, team) => {
+          acc[team] = 0; // Default points to 0
+          return acc;
+        }, {});
+
+        Object.values(results).forEach(({ teamName, points }) => {
+          if (teamName in teamScores) {
+            teamScores[teamName] += points;
+          }
+        });
+
+        // Convert to sorted array
+        const sortedRankings = Object.entries(teamScores)
+          .map(([team, score]) => ({ team, score }))
+          .sort((a, b) => b.score - a.score);
+
+        setRankings(sortedRankings);
+      } catch (error) {
+        console.error("Error fetching rankings:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchResults();
+  }, []);
+
   return (
     <div className="home-container">
-      {/* Fixed section for scrollable content */}
       <div className="content-container">
         <div className="content-scrollable">
           <div className="container px-4">
-            {/* Cards Section */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-
-              {/* Rohith edit card here */}
-
-
-              
-              <div className="card">
-                <h2>SOCIALISM</h2>
-                <p>Grade: A</p>
-                <p>Score: 100</p>
+            <h1 className="Heading">Team Rankings</h1>
+            {loading ? (
+              <p>Loading rankings...</p>
+            ) : (
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {rankings.map((team, index) => (
+                  <div className="card" key={team.team}>
+                    <h2>{team.team}</h2>
+                    <p>Position: {index + 1}</p>
+                    <p>Score: {team.score}</p>
+                  </div>
+                ))}
               </div>
-
-              {/* Additional cards */}
-              <div className="card">
-                <h2>SECULARISM</h2>
-                <p>Position : First</p>
-                <p>Score: 90</p>
-              </div>
-              <div className="card">
-                <h2>Team C</h2>
-                <p>Position : Second</p>
-                <p>Score: 80</p>
-              </div>
-              <div className="card">
-                <h2>DEMOCRACY</h2>
-                <p>Position : Third</p>
-                <p>Score: 70</p>
-              </div>
-              <div className="card">
-                <h2>JUSTICE</h2>
-                <p>Position : Fourth</p>
-                <p>Score: 60</p>
-              </div>
-              <div className="card">
-                <h2>LIBERTY</h2>
-                <p>Position : Fifth</p>
-                <p>Score: 50</p>
-              </div>
-
-
-              
-
-
-
-            </div>
+            )}
           </div>
         </div>
       </div>
-
-      {/* NavBar is fixed at the bottom */}
-      <div className="navbar">
-        {/* Your NavBar Component */}
-
-      </div>
-     
     </div>
   );
 }
