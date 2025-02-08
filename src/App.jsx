@@ -8,6 +8,7 @@ import Schedule from './components/Schedule';
 import Logobar from './components/Logobar';
 import Admin from './components/Admin/Admin';
 import NavBar from './components/NavBar';
+import AdminLogin from './components/Admin/AdminLogin';
 
 
 // Import background image
@@ -37,6 +38,7 @@ function App() {
           <Route path='/Search' element={<Search />} />
           <Route path='/Schedule' element={<Schedule />} />
           <Route path='/Admin' element={<Admin />} />
+          <Route path='/AdminLogin' element={<AdminLogin />} />
         </Routes>
       </BrowserRouter>
     </div>
