@@ -50,7 +50,7 @@ function Home() {
       <div className="content-container">
         <div className="content-scrollable">
           <div className="container px-4">
-            <h1 className="Heading">Team Rankings</h1>
+            <h1 className="Heading">Rankings</h1>
             {loading ? (
               <p>Loading rankings...</p>
             ) : (

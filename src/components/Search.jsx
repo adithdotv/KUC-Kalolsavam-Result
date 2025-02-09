@@ -40,13 +40,13 @@ function Search() {
     <>
       <div className="home-container flex flex-col h-screen bg-cover bg-center">
         {/* Search Input */}
-        <div className="fixed top-[100px] left-0 right-0 z-50 p-4 bg-transparent">
+        <div className="fixed top-[110px] left-0 right-0 z-50 p-4 bg-transparent">
           <div className="flex justify-center space-x-4">
             <input
               type="text"
-              placeholder="Search results by item name...(in Malayalam)"
+              placeholder="Search results by item name..(in Malayalam)"
               className="search-input px-4 py-2 rounded-lg border border-gray-300 w-1/2 
-                  bg-white bg-opacity-50 backdrop-blur-md text-black placeholder-gray-600"
+                  bg-transparant bg-opacity-50 backdrop-blur-md text-black placeholder-black-600"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

@@ -110,12 +110,12 @@ function Admin() {
       console.error("Error saving result:", error);
     }
   };
+  
 
   return (
-    <div>
+    <div className="fixed top-0 left-0 w-full h-full bg-white z-50 overflow-auto">
       {/* Logout Button */}
-      <Navbar/>
-      <div className="flex justify-end p-4">
+      <div className="flex justify-end p-4 mt-6"> {/* Increased margin-top */}
         <button 
           onClick={handleLogout} 
           className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition"
@@ -123,8 +123,8 @@ function Admin() {
           Logout
         </button>
       </div>
-      <div className="admin-container">
       
+      <div className="admin-container">
         <div className="form-container">
           <h1 className="Heading-admin">Mark Entry</h1>
           <form onSubmit={handleSubmit}>
@@ -150,7 +150,7 @@ function Admin() {
                   />
                 )}
               </div>
-
+  
               <div className="input-container">
                 <label htmlFor="teamName">Select Team Name:</label>
                 <select
@@ -170,7 +170,7 @@ function Admin() {
                 </select>
               </div>
             </div>
-
+  
             <div className="input-container">
               <label htmlFor="participantName">Participant Full Name:</label>
               <input
@@ -182,7 +182,7 @@ function Admin() {
                 required
               />
             </div>
-
+  
             <div className="row-inputs">
               <div className="input-container">
                 <label htmlFor="grade">Enter Grade:</label>
@@ -201,7 +201,7 @@ function Admin() {
                   ))}
                 </select>
               </div>
-
+  
               <div className="input-container">
                 <label htmlFor="points">Points:</label>
                 <input
@@ -213,16 +213,16 @@ function Admin() {
                 />
               </div>
             </div>
-
+  
             <div className="submit-container">
               <button type="submit">Submit</button>
             </div>
           </form>
         </div>
       </div>
-      
     </div>
   );
+  
 }
 
 export default Admin;
