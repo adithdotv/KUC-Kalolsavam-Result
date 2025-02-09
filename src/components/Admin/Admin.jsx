@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import "./Admin.css";
-import Navbar from "./Navbar";
 import { db } from "../../firebaseConfig"; // Import Firebase config
-import { collection, getDocs } from "firebase/firestore"; // Firestore methods
 import { get, push, ref, update } from "firebase/database";
+import Navbar from './Navbar'
 
 const gradePointsMap = {
   "I with A": 8,
@@ -32,6 +32,13 @@ function Admin() {
 
   const [options, setOptions] = useState([]); // Store items from DB
   const [loading, setLoading] = useState(true); // Loading state
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated"); // Remove auth state
+    navigate("/admin-login"); // Redirect to Login Page
+  };
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -106,8 +113,18 @@ function Admin() {
 
   return (
     <div>
-      <Navbar /> <br />
+      {/* Logout Button */}
+      <Navbar/>
+      <div className="flex justify-end p-4">
+        <button 
+          onClick={handleLogout} 
+          className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition"
+        >
+          Logout
+        </button>
+      </div>
       <div className="admin-container">
+      
         <div className="form-container">
           <h1 className="Heading-admin">Mark Entry</h1>
           <form onSubmit={handleSubmit}>
@@ -203,6 +220,7 @@ function Admin() {
           </form>
         </div>
       </div>
+      
     </div>
   );
 }
